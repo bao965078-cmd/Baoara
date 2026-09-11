@@ -526,7 +526,7 @@ async def likes_cmd(
     await remember_user(update)
 
     text = (
-        "<b>❤️ BUFF LIKES SHOP BẢO ARA</b>\n\n"
+        "<b>BUFF LIKES SHOP BẢO ARA AD @baoarariul</b>\n\n"
         f"📦 Box Buff Likes:\n"
         f"{BOX_BUFF_LIKE}\n\n"
         f"📢 Kênh tham gia:\n"
@@ -761,34 +761,24 @@ async def do_ff_lookup(
     result = f"""
 <b>THÔNG TIN TÀI KHOẢN FREE FIRE</b>
 ━━━━━━━━━━━━━━━━━━━━━
-
 👤 Tên:
 <b>{html.escape(name)}</b>
-
 🆔 ID:
 <code>{html.escape(uid)}</code>
-
 🧸 Level:
 <b>{html.escape(level)}</b>
-
 👍🏻 Like:
 <b>{html.escape(likes)}</b>
-
 📈 EXP:
 <b>{html.escape(exp)}</b>
-
 🌍 Khu vực:
 <b>{html.escape(region)}</b>
-
 📅 Ngày tạo acc:
 <b>{html.escape(created)}</b>
-
 🕒 Lần cuối đăng nhập:
 <b>{html.escape(last_login)}</b>
-
 📝 Tiểu sử:
 <i>{html.escape(bio)}</i>
-
 ━━━━━━━━━━━━━━━━━
 <b>tele @baoarariul</b>
 """
@@ -1067,31 +1057,22 @@ async def tt(
     result = f"""
 <b>THÔNG TIN TÀI KHOẢN TIKTOK</b>
 ━━━━━━━━━━━━━━━━━━━━
-
 👤 Tên:
 <b>{html.escape(str(nickname))}</b>
-
 🗿 Username:
 <b>@{html.escape(str(user_name).lstrip('@'))}</b>
-
 🆔 User ID:
 <code>{html.escape(str(user_id))}</code>
-
 👥 Followers:
 <b>{html.escape(str(followers))}</b>
-
 ➕ Following:
 <b>{html.escape(str(following))}</b>
-
 ❤️ Likes:
 <b>{html.escape(str(likes))}</b>
-
 🎬 Video:
 <b>{html.escape(str(videos))}</b>
-
 📝 Tiểu sử:
 <i>{html.escape(str(bio))}</i>
-
 ━━━━━━━━━━━━━━━━━━━━
 <b>Shop Bảo Ara 🧸</b>
 📞 @baoarariul
@@ -1305,7 +1286,7 @@ async def tb(
 
     try:
         await status.edit_text(
-            "✅ <b>BROADCAST HOÀN TẤT</b>\n\n"
+            "✅ <b>gửi HOÀN TẤT</b>\n\n"
             f"📨 Thành công: <b>{sent}</b>\n"
             f"❌ Thất bại: <b>{failed}</b>",
             parse_mode="HTML"
