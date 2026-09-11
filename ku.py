@@ -28,8 +28,7 @@ logging.basicConfig(
 # CONFIG
 # =========================================================
 
-TOKEN = os.getenv("8745510750:AAHL7q-_s7PpuQBdwgq3mq-vd-M7h7WDGmE", "").strip()
-
+TOKEN ="8745510750:AAHL7q-_s7PpuQBdwgq3mq-vd-M7h7WDGmE"
 FF_API = "https://infohh.vercel.app/get"
 TIKTOK_API = "https://socialmediainfo-nu.vercel.app/riduan/tiktok"
 
