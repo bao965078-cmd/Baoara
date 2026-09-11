@@ -23,23 +23,9 @@ jobs:
 
       - name: 🔎 Kiểm tra file
         run: |
-          echo "===== FILE ====="
           ls -la
-          echo "===== PYTHON ====="
           python --version
 
-      - name: 🔐 Kiểm tra BOT_TOKEN
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: |
-          if [ -z "$BOT_TOKEN" ]; then
-            echo "❌ BOT_TOKEN CHƯA ĐƯỢC THÊM VÀO SECRETS!"
-            exit 1
-          fi
-          echo "✅ BOT_TOKEN đã được nhận"
-
       - name: 🚀 Chạy bot
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
           python -u ku.py
