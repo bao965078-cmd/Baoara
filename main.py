@@ -526,7 +526,7 @@ async def likes_cmd(
     await remember_user(update)
 
     text = (
-        "<b>BUFF LIKES SHOP IB AD @baoarariul </b>\n\n"
+        "<b>BUFF LIKES IB AD @baoarariul </b>\n\n"
         f" Box Buff Likes:\n"
         f"{BOX_BUFF_LIKE}\n\n"
         f"📢 Kênh tham gia:\n"
