@@ -48,8 +48,8 @@ logger = logging.getLogger(__name__)
 # CONFIG
 # =========================================================
 
-# DÁN TOKEN BOT MỚI CỦA BẠN VÀO ĐÂY
-TOKEN = "8745510750:AAHL7q-_s7PpuQBdwgq3mq-vd-M7h7WDGmE"
+# Ưu tiên lấy từ biến môi trường BOT_TOKEN, nếu không có sẽ dùng Token cấu hình trực tiếp
+TOKEN = os.getenv("BOT_TOKEN", "8745510750:AAHL7q-_s7PpuQBdwgq3mq-vd-M7h7WDGmE")
 
 FF_API = "https://infohh.vercel.app/get"
 
@@ -526,7 +526,7 @@ async def likes_cmd(
     await remember_user(update)
 
     text = (
-        "<b>BUFF LIKES SHOP BẢO ARA AD @baoarariul</b>\n\n"
+        "<b>❤️ BUFF LIKES SHOP BẢO ARA</b>\n\n"
         f"📦 Box Buff Likes:\n"
         f"{BOX_BUFF_LIKE}\n\n"
         f"📢 Kênh tham gia:\n"
@@ -761,15 +761,34 @@ async def do_ff_lookup(
     result = f"""
 <b>THÔNG TIN TÀI KHOẢN FREE FIRE</b>
 ━━━━━━━━━━━━━━━━━━━━━
-👤 Tên:<b>{html.escape(name)}</b>
-🆔 ID:<code>{html.escape(uid)}</code>
-🧸 Level:<b>{html.escape(level)}</b>
-👍🏻 Like:<b>{html.escape(likes)}</b>
-📈 EXP:<b>{html.escape(exp)}</b>
-🌍 Khu vực:<b>{html.escape(region)}</b>
-📅 Ngày tạo acc:<b>{html.escape(created)}</b>
-🕒 Lần cuối đăng nhập:<b>{html.escape(last_login)}</b>
-📝 Tiểu sử:<i>{html.escape(bio)}</i>
+
+👤 Tên:
+<b>{html.escape(name)}</b>
+
+🆔 ID:
+<code>{html.escape(uid)}</code>
+
+🧸 Level:
+<b>{html.escape(level)}</b>
+
+👍🏻 Like:
+<b>{html.escape(likes)}</b>
+
+📈 EXP:
+<b>{html.escape(exp)}</b>
+
+🌍 Khu vực:
+<b>{html.escape(region)}</b>
+
+📅 Ngày tạo acc:
+<b>{html.escape(created)}</b>
+
+🕒 Lần cuối đăng nhập:
+<b>{html.escape(last_login)}</b>
+
+📝 Tiểu sử:
+<i>{html.escape(bio)}</i>
+
 ━━━━━━━━━━━━━━━━━
 <b>tele @baoarariul</b>
 """
@@ -1048,22 +1067,31 @@ async def tt(
     result = f"""
 <b>THÔNG TIN TÀI KHOẢN TIKTOK</b>
 ━━━━━━━━━━━━━━━━━━━━
+
 👤 Tên:
 <b>{html.escape(str(nickname))}</b>
+
 🗿 Username:
 <b>@{html.escape(str(user_name).lstrip('@'))}</b>
+
 🆔 User ID:
 <code>{html.escape(str(user_id))}</code>
+
 👥 Followers:
 <b>{html.escape(str(followers))}</b>
+
 ➕ Following:
 <b>{html.escape(str(following))}</b>
+
 ❤️ Likes:
 <b>{html.escape(str(likes))}</b>
+
 🎬 Video:
 <b>{html.escape(str(videos))}</b>
+
 📝 Tiểu sử:
 <i>{html.escape(str(bio))}</i>
+
 ━━━━━━━━━━━━━━━━━━━━
 <b>Shop Bảo Ara 🧸</b>
 📞 @baoarariul
@@ -1277,7 +1305,7 @@ async def tb(
 
     try:
         await status.edit_text(
-            "✅ <b>gửi HOÀN TẤT</b>\n\n"
+            "✅ <b>BROADCAST HOÀN TẤT</b>\n\n"
             f"📨 Thành công: <b>{sent}</b>\n"
             f"❌ Thất bại: <b>{failed}</b>",
             parse_mode="HTML"
@@ -1418,8 +1446,6 @@ async def text_handler(
     if not user or not message:
         return
 
-    # Chỉ admin đã dùng /ara mới được kích hoạt
-    # pending của chính admin đó.
     if user.id not in pending_group_broadcast:
 
         return
@@ -1506,10 +1532,10 @@ async def error_handler(
 
 def run():
 
-    if not TOKEN or TOKEN == "PASTE_BOT_TOKEN_HERE":
+    if not TOKEN:
 
         raise RuntimeError(
-            "Chưa nhập BOT TOKEN vào ku.py"
+            "Chưa cấu hình BOT TOKEN."
         )
 
     app = (
