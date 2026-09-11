@@ -761,24 +761,15 @@ async def do_ff_lookup(
     result = f"""
 <b>THÔNG TIN TÀI KHOẢN FREE FIRE</b>
 ━━━━━━━━━━━━━━━━━━━━━
-👤 Tên:
-<b>{html.escape(name)}</b>
-🆔 ID:
-<code>{html.escape(uid)}</code>
-🧸 Level:
-<b>{html.escape(level)}</b>
-👍🏻 Like:
-<b>{html.escape(likes)}</b>
-📈 EXP:
-<b>{html.escape(exp)}</b>
-🌍 Khu vực:
-<b>{html.escape(region)}</b>
-📅 Ngày tạo acc:
-<b>{html.escape(created)}</b>
-🕒 Lần cuối đăng nhập:
-<b>{html.escape(last_login)}</b>
-📝 Tiểu sử:
-<i>{html.escape(bio)}</i>
+👤 Tên:<b>{html.escape(name)}</b>
+🆔 ID:<code>{html.escape(uid)}</code>
+🧸 Level:<b>{html.escape(level)}</b>
+👍🏻 Like:<b>{html.escape(likes)}</b>
+📈 EXP:<b>{html.escape(exp)}</b>
+🌍 Khu vực:<b>{html.escape(region)}</b>
+📅 Ngày tạo acc:<b>{html.escape(created)}</b>
+🕒 Lần cuối đăng nhập:<b>{html.escape(last_login)}</b>
+📝 Tiểu sử:<i>{html.escape(bio)}</i>
 ━━━━━━━━━━━━━━━━━
 <b>tele @baoarariul</b>
 """
