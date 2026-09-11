@@ -49,7 +49,7 @@ logger = logging.getLogger(__name__)
 # =========================================================
 
 # DÁN TOKEN BOT MỚI CỦA BẠN VÀO ĐÂY
-TOKEN = "PASTE_BOT_TOKEN_HERE"
+TOKEN = "8745510750:AAHL7q-_s7PpuQBdwgq3mq-vd-M7h7WDGmE"
 
 FF_API = "https://infohh.vercel.app/get"
 
