@@ -23,8 +23,8 @@ jobs:
 
       - name: 🔎 Kiểm tra file
         run: |
-          ls -la
-          python --version
+          python -m py_compile ku.py
+          echo "✅ ku.py không có lỗi cú pháp"
 
       - name: 🚀 Chạy bot
         run: |
